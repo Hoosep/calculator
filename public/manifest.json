@@ -1,0 +1,20 @@
+{
+  "short_name": "Basic Calculator",
+  "name": "Basic Calculator built with React :)",
+  "icons": [
+    {
+      "src": "calculator256.png",
+      "type": "image/png",
+      "sizes": "256x256"
+    },
+    {
+      "src": "calculator512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
