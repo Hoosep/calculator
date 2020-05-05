@@ -70,9 +70,9 @@ const ButtonsPanel = props => {
         <Button text="-" operation />
       </Row>
       <Row>
-        <Button text="3" />
-        <Button text="2" />
         <Button text="1" />
+        <Button text="2" />
+        <Button text="3" />
         <Button text="+" operation />
       </Row>
       <Row>
