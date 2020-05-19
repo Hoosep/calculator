@@ -1,10 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled, { keyframes } from "styled-components";
 
 // Own components
 import DarkModeIcon from "../../Shared/DarkIcon";
 import LightModeIcon from "../../Shared/LightIcon";
-// background-color: #858694;
+
+// Utils
+import { formatNumber } from "../../Shared/Utils";
+
 const ContainerDisplay = styled.div`
   background-color: ${props => {
     if(props.theme.theme === "dark") { return "#000" }
@@ -70,12 +73,20 @@ const ContainerIcon = styled.div`
 
 const Display = props => {
   const { result, changeTheme } = props;
+  const widthDevice = window.innerWidth;
+
   const [darkMode, setDarkMode] = useState(false);
 
   const handleClickMode = () => {
     setDarkMode(!darkMode);
     changeTheme(!darkMode);
   };
+
+  useEffect(() => {
+    const valueElement = document.getElementById('result');
+    console.log("value", valueElement);
+    let valueLength = result.length;
+  }, [result]);
 
   return (
     <ContainerDisplay>
@@ -86,7 +97,7 @@ const Display = props => {
           ) : <DarkModeIcon />
         }
       </ContainerIcon>
-      <Value>{result}</Value>
+      <Value id="result">{formatNumber(result)}</Value>
     </ContainerDisplay>
   )
 }
